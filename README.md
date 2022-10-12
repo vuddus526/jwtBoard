@@ -36,10 +36,7 @@
 </aside>
 
 1. 아래 요구사항에 맞는 API 명세서와 ERD 설계
-**ERD 설계 →** [https://www.erdcloud.com/](https://www.erdcloud.com/)
-    
-    **API 명세서 작성 툴 →** [https://learnote-dev.com/java/Spring-A-문서-작성하기/](https://learnote-dev.com/java/Spring-A-%EB%AC%B8%EC%84%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0/)
-    
+
 2. 회원 가입 API
     - 닉네임, 비밀번호, 비밀번호 확인을 request에서 전달받기
     - 닉네임은 `최소 4자 이상, 12자 이하 알파벳 대소문자(a~z, A~Z), 숫자(0~9)`로 구성하기
@@ -52,10 +49,6 @@
     발급한 AccessToken은 Header의 Access-Token에 담아서 반환하기
     - 로그인 성공 시, JWT를 활용하여 RefreshToken을 발급하고,
     발급한 RefreshToken은 Header의 Refresh-Token에 담아서 반환하기
-    - **참고 자료**
-        1. [https://www.youtube.com/watch?v=ewslpCROKXY&t=440s](https://www.youtube.com/watch?v=ewslpCROKXY&t=440s)
-        2. [https://www.inflearn.com/course/스프링부트-jwt](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-jwt)
-        3. [https://bcp0109.tistory.com/301](https://bcp0109.tistory.com/301)
 4. 로그인 검사
     - `아래 API를 제외하고` 모두 AccessToken, RefreshToken을 전달한 경우만 정상 response를 전달받을 수 있도록 하기
         - 회원가입 API
