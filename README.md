@@ -35,7 +35,7 @@
 
 </aside>
 
-1. 아래 요구사항에 맞는 API 명세서와 ERD 설계
+1. 아래 요구사항에 맞는 API 명세서와 ERD 설계 <br>
 ![image](https://user-images.githubusercontent.com/97796338/195535636-ea1642ca-ace9-46a4-b664-86bfad834e90.png)
 
 
