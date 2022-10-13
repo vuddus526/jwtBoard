@@ -1,7 +1,7 @@
 package com.sparta.jwtBoard.jwt;
 
 import com.sparta.jwtBoard.dto.TokenDto;
-import com.sparta.jwtBoard.security.UserDetailServiceImp;
+import com.sparta.jwtBoard.security.UserDetailsServiceImp;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
@@ -27,11 +27,11 @@ public class JwtProvider {
 
     private final Key key;
 
-    private final UserDetailServiceImp userDetailServiceImp;
+    private final UserDetailsServiceImp userDetailsServiceImp;
 
-    public JwtProvider(UserDetailServiceImp userDetailServiceImp) {
+    public JwtProvider(UserDetailsServiceImp userDetailsServiceImp) {
         this.key = Keys.hmacShaKeyFor(SECRET.getBytes());
-        this.userDetailServiceImp = userDetailServiceImp;
+        this.userDetailsServiceImp = userDetailsServiceImp;
     }
 
     // 토큰만들기
@@ -61,7 +61,7 @@ public class JwtProvider {
     // 권한정보받기
     public Authentication getAuthentication(String token) {
         Claims claims = parseClaims(token);
-        UserDetails userDetails = userDetailServiceImp.loadUserByUsername(claims.getSubject());
+        UserDetails userDetails = userDetailsServiceImp.loadUserByUsername(claims.getSubject());
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 

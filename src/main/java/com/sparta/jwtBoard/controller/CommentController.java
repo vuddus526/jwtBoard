@@ -2,7 +2,7 @@ package com.sparta.jwtBoard.controller;
 
 import com.sparta.jwtBoard.dto.CommentRequestDto;
 import com.sparta.jwtBoard.dto.CommentResponseDto;
-import com.sparta.jwtBoard.security.UserDetailImp;
+import com.sparta.jwtBoard.security.UserDetailsImpl;
 import com.sparta.jwtBoard.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -17,20 +17,20 @@ public class CommentController {
 
     //댓글 쓰기
     @PostMapping("/api/auth/comment")
-    public CommentResponseDto createComment(@RequestBody CommentRequestDto commentRequestDto, @AuthenticationPrincipal UserDetailImp userDetailImp) {
-        return commentService.createComment(commentRequestDto, userDetailImp.getUsername());
+    public CommentResponseDto createComment(@RequestBody CommentRequestDto commentRequestDto, @AuthenticationPrincipal UserDetailsImpl userDetailsImpl) {
+        return commentService.createComment(commentRequestDto, userDetailsImpl.getUsername());
     }
 
     //댓글 수정
     @PostMapping("/api/auth/comment/{id}")
-    public CommentResponseDto updateComment(@PathVariable Long id, @RequestBody CommentRequestDto commentRequestDto, @AuthenticationPrincipal UserDetailImp userDetailImp) throws IllegalAccessException {
-        return commentService.updateComment(id, commentRequestDto, userDetailImp.getUsername());
+    public CommentResponseDto updateComment(@PathVariable Long id, @RequestBody CommentRequestDto commentRequestDto, @AuthenticationPrincipal UserDetailsImpl userDetailsImpl) throws IllegalAccessException {
+        return commentService.updateComment(id, commentRequestDto, userDetailsImpl.getUsername());
     }
 
     //댓글 삭제
     @DeleteMapping("/api/auth/comment/{id}")
-    public String deleteComment(@PathVariable Long id, @AuthenticationPrincipal UserDetailImp userDetailImp) {
-        return commentService.deleteComment(id, userDetailImp.getUsername());
+    public String deleteComment(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetailsImpl) {
+        return commentService.deleteComment(id, userDetailsImpl.getUsername());
     }
 
 
