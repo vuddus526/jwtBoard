@@ -36,6 +36,8 @@
 </aside>
 
 1. 아래 요구사항에 맞는 API 명세서와 ERD 설계
+![image](https://user-images.githubusercontent.com/97796338/195535636-ea1642ca-ace9-46a4-b664-86bfad834e90.png)
+
 
 2. 회원 가입 API
     - 닉네임, 비밀번호, 비밀번호 확인을 request에서 전달받기
